@@ -1,0 +1,54 @@
+{{isAdmin}} - Role
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
+    <div class="container">
+        <img src="./assets/AEClogo.png" alt="..." width="250" height="80">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsExample07">
+        <ng-container *ngIf="!isAdmin; else viewAdmin">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./login">Ingresar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (clik)="onLogout()">Salir</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Admin</a>
+          </li>          
+        </ul>
+      </ng-container>   
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">       
+        <button (click)="isAdmin=!isAdmin" class="btn btn-primary" type="button">Change</button>
+      </div>              
+      </div>
+    </div>
+  </nav>
+
+
+
+  <ng-template #viewAdmin>   
+  <div class="container">
+    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom">
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="#" class="nav-link px-2 link-light">Inicio</a></li>
+        <li><a href="#" class="nav-link px-2 link-light">Nosotros</a></li>
+      </ul>
+      <div class="col-md-3 text-end">
+        <a href="./login" class="btn btn-outline-light" tabindex="-1" role="button" aria-disabled="true">Ingresar</a>
+        <button  mat-icon-button (click)="onToggleSidenav()" type="button" class="btn btn-dark">                           
+          <i class="bi bi-blockquote-left">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-blockquote-left" viewBox="0 0 16 16">
+              <path d="M2.5 3a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1h-11zm5 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6zm0 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6zm-5 3a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1h-11zm.79-5.373c.112-.078.26-.17.444-.275L3.524 6c-.122.074-.272.17-.452.287-.18.117-.35.26-.51.428a2.425 2.425 0 0 0-.398.562c-.11.207-.164.438-.164.692 0 .36.072.65.217.873.144.219.385.328.72.328.215 0 .383-.07.504-.211a.697.697 0 0 0 .188-.463c0-.23-.07-.404-.211-.521-.137-.121-.326-.182-.568-.182h-.282c.024-.203.065-.37.123-.498a1.38 1.38 0 0 1 .252-.37 1.94 1.94 0 0 1 .346-.298zm2.167 0c.113-.078.262-.17.445-.275L5.692 6c-.122.074-.272.17-.452.287-.18.117-.35.26-.51.428a2.425 2.425 0 0 0-.398.562c-.11.207-.164.438-.164.692 0 .36.072.65.217.873.144.219.385.328.72.328.215 0 .383-.07.504-.211a.697.697 0 0 0 .188-.463c0-.23-.07-.404-.211-.521-.137-.121-.326-.182-.568-.182h-.282a1.75 1.75 0 0 1 .118-.492c.058-.13.144-.254.257-.375a1.94 1.94 0 0 1 .346-.3z"/>
+            </svg>
+          </i>
+        </button>
+      </div>
+    </header>
+  </div>      
+</ng-template>
